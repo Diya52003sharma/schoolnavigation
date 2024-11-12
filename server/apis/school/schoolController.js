@@ -1,6 +1,6 @@
 const userModel = require('../user/userModel')
 const schoolModel = require('./schoolModel')
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 
 const register = async (req, res) => {
     let validation = ""
