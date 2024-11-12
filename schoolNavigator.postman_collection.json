@@ -1,0 +1,2197 @@
+{
+	"info": {
+		"_postman_id": "f0be01c3-ed2a-4ad6-a6f4-c9af14deef1e",
+		"name": "schoolNavigator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31923130"
+	},
+	"item": [
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "admin@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{admin}}login",
+									"host": [
+										"{{baseURL}}{{admin}}login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "changePassword",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "661b7c8c78ea590776a51bae",
+											"type": "text"
+										},
+										{
+											"key": "currentPassword",
+											"value": "123",
+											"type": "text"
+										},
+										{
+											"key": "newPassword",
+											"value": "000",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{admin}}changePassword",
+									"host": [
+										"{{baseURL}}{{admin}}changePassword"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "changeStatus",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "661b9853c375608a5ba285fa",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "false",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{admin}}user/changeStatus",
+									"host": [
+										"{{baseURL}}{{admin}}user"
+									],
+									"path": [
+										"changeStatus"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "school",
+					"item": [
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{baseURL}}{{admin}}{{school}}all",
+									"host": [
+										"{{baseURL}}{{admin}}{{school}}all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "661b894cc34c1d37534f3daf",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{admin}}{{school}}single",
+									"host": [
+										"{{baseURL}}{{admin}}{{school}}single"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "parent",
+					"item": [
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{baseURL}}{{admin}}{{parent}}all",
+									"host": [
+										"{{baseURL}}{{admin}}{{parent}}all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "6613f704867bcf27a343bf9d",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{admin}}{{parent}}single",
+									"host": [
+										"{{baseURL}}{{admin}}{{parent}}single"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "class",
+					"item": [
+						{
+							"name": "add",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Third Grade",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{admin}}class/add",
+									"host": [
+										"{{baseURL}}{{admin}}class"
+									],
+									"path": [
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{baseURL}}{{admin}}class/all",
+									"host": [
+										"{{baseURL}}{{admin}}class"
+									],
+									"path": [
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "661b85d478ea590776a51bb5",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{admin}}class/single",
+									"host": [
+										"{{baseURL}}{{admin}}class"
+									],
+									"path": [
+										"single"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "661b85d478ea590776a51bb5",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "First Standard",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{admin}}class/update",
+									"host": [
+										"{{baseURL}}{{admin}}class"
+									],
+									"path": [
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "661b85d478ea590776a51bb5",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{admin}}class/delete",
+									"host": [
+										"{{baseURL}}{{admin}}class"
+									],
+									"path": [
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "post",
+					"item": [
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{admin}}post/all",
+									"host": [
+										"{{baseURL}}{{admin}}post"
+									],
+									"path": [
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "661b97a5c375608a5ba285f0",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{admin}}post/single",
+									"host": [
+										"{{baseURL}}{{admin}}post"
+									],
+									"path": [
+										"single"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "feeStructure",
+					"item": [
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "schoolId",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{admin}}feeStructure/all",
+									"host": [
+										"{{baseURL}}{{admin}}feeStructure"
+									],
+									"path": [
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "661b9fccc375608a5ba28627",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{admin}}feeStructure/single",
+									"host": [
+										"{{baseURL}}{{admin}}feeStructure"
+									],
+									"path": [
+										"single"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "booking",
+					"item": [
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{baseURL}}{{admin}}booking/all",
+									"host": [
+										"{{baseURL}}{{admin}}booking"
+									],
+									"path": [
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "661ba29e8533c39fe6ef21ef",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{admin}}booking/single",
+									"host": [
+										"{{baseURL}}{{admin}}booking"
+									],
+									"path": [
+										"single"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "enquiry",
+					"item": [
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "status",
+											"value": "false",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "status",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{admin}}enquiry/all",
+									"host": [
+										"{{baseURL}}{{admin}}enquiry"
+									],
+									"path": [
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "661b86ef78ea590776a51bc9",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{admin}}enquiry/single",
+									"host": [
+										"{{baseURL}}{{admin}}enquiry"
+									],
+									"path": [
+										"single"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "661b86ef78ea590776a51bc9",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "false",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{admin}}enquiry/update",
+									"host": [
+										"{{baseURL}}{{admin}}enquiry"
+									],
+									"path": [
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "dashboard",
+					"item": [
+						{
+							"name": "adminDashboard",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{baseURL}}{{admin}}dashboard",
+									"host": [
+										"{{baseURL}}{{admin}}dashboard"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "school",
+			"item": [
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "school@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{school}}login",
+									"host": [
+										"{{baseURL}}{{school}}login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "changePassword",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "661b894cc34c1d37534f3daf",
+											"type": "text"
+										},
+										{
+											"key": "currentPassword",
+											"value": "123",
+											"type": "text"
+										},
+										{
+											"key": "newPassword",
+											"value": "000",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{school}}changePassword",
+									"host": [
+										"{{baseURL}}{{school}}changePassword"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Dips",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "school@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "Jal",
+											"type": "text"
+										},
+										{
+											"key": "principal",
+											"value": "Principle Dips",
+											"type": "text"
+										},
+										{
+											"key": "schoolDescription",
+											"value": "This is School 1",
+											"type": "text"
+										},
+										{
+											"key": "logo",
+											"type": "file",
+											"src": "images.jpeg"
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{school}}register",
+									"host": [
+										"{{baseURL}}{{school}}register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update profile",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Dips Jal Branch",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "school1@gmail.com",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "address",
+											"value": "Jalandhar",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "principal",
+											"value": "Principal Dips",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "schoolDescription",
+											"value": "This is School 1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "logo",
+											"type": "file",
+											"src": "dips-school-urban-estate-jalandhar-schools-x29il69pmi.jpg"
+										},
+										{
+											"key": "_id",
+											"value": "661b894cc34c1d37534f3daf",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{school}}update",
+									"host": [
+										"{{baseURL}}{{school}}update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single profle",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "661b894cc34c1d37534f3daf",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{school}}{{school}}single",
+									"host": [
+										"{{baseURL}}{{school}}{{school}}single"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "parent",
+					"item": [
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "6613f81a4ce2068f73917eaa",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{school}}{{parent}}single",
+									"host": [
+										"{{baseURL}}{{school}}{{parent}}single"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "class",
+					"item": [
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{baseURL}}{{school}}class/all",
+									"host": [
+										"{{baseURL}}{{school}}class"
+									],
+									"path": [
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "661b85d478ea590776a51bb5",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{school}}class/single",
+									"host": [
+										"{{baseURL}}{{school}}class"
+									],
+									"path": [
+										"single"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "post",
+					"item": [
+						{
+							"name": "add",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "fileDescription",
+											"value": "school post 1",
+											"type": "text"
+										},
+										{
+											"key": "schoolId",
+											"value": "661b894cc34c1d37534f3daf",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "Speech-on-Annual-Function.webp"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{school}}post/add",
+									"host": [
+										"{{baseURL}}{{school}}post"
+									],
+									"path": [
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "schoolId",
+											"value": "661b894cc34c1d37534f3daf",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{school}}post/all",
+									"host": [
+										"{{baseURL}}{{school}}post"
+									],
+									"path": [
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "661b97a5c375608a5ba285f0",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{school}}post/single",
+									"host": [
+										"{{baseURL}}{{school}}post"
+									],
+									"path": [
+										"single"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_id",
+											"value": "661b97a5c375608a5ba285f0",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "maxresdefault.jpg"
+										},
+										{
+											"key": "fileDescription",
+											"value": "123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{school}}post/update",
+									"host": [
+										"{{baseURL}}{{school}}post"
+									],
+									"path": [
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "661b97a5c375608a5ba285f0",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{school}}post/delete",
+									"host": [
+										"{{baseURL}}{{school}}post"
+									],
+									"path": [
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "feeStructure",
+					"item": [
+						{
+							"name": "add",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "schoolId",
+											"value": "661b894cc34c1d37534f3daf",
+											"type": "text"
+										},
+										{
+											"key": "addmissionFee",
+											"value": "4000",
+											"type": "text"
+										},
+										{
+											"key": "yearlyFee",
+											"value": "16000",
+											"type": "text"
+										},
+										{
+											"key": "monthlyFee",
+											"value": "2000",
+											"type": "text"
+										},
+										{
+											"key": "extra",
+											"value": "No",
+											"type": "text"
+										},
+										{
+											"key": "classId",
+											"value": "661b85d478ea590776a51bb5",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{school}}feeStructure/add",
+									"host": [
+										"{{baseURL}}{{school}}feeStructure"
+									],
+									"path": [
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "schoolId",
+											"value": "661b894cc34c1d37534f3daf",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{school}}feeStructure/all",
+									"host": [
+										"{{baseURL}}{{school}}feeStructure"
+									],
+									"path": [
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "661b9fccc375608a5ba28627",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{school}}feeStructure/single",
+									"host": [
+										"{{baseURL}}{{school}}feeStructure"
+									],
+									"path": [
+										"single"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "661b9fccc375608a5ba28627",
+											"type": "text"
+										},
+										{
+											"key": "classId",
+											"value": "6613f35f867bcf27a343bf81",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "addmissionFee",
+											"value": "5000",
+											"type": "text"
+										},
+										{
+											"key": "yearlyFee",
+											"value": "40000",
+											"type": "text"
+										},
+										{
+											"key": "monthlyFee",
+											"value": "2500",
+											"type": "text"
+										},
+										{
+											"key": "extra",
+											"value": "2000",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{school}}feeStructure/update",
+									"host": [
+										"{{baseURL}}{{school}}feeStructure"
+									],
+									"path": [
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "661b9fccc375608a5ba28627",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{school}}feeStructure/delete",
+									"host": [
+										"{{baseURL}}{{school}}feeStructure"
+									],
+									"path": [
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "booking",
+					"item": [
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "schoolId",
+											"value": "661b894cc34c1d37534f3daf",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{school}}booking/all",
+									"host": [
+										"{{baseURL}}{{school}}booking"
+									],
+									"path": [
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "661ba29e8533c39fe6ef21ef",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{school}}booking/single",
+									"host": [
+										"{{baseURL}}{{school}}booking"
+									],
+									"path": [
+										"single"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "661ba29e8533c39fe6ef21ef",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "Approved",
+											"type": "text"
+										},
+										{
+											"key": "bookingTime",
+											"value": "10:00 AM",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{school}}booking/update",
+									"host": [
+										"{{baseURL}}{{school}}booking"
+									],
+									"path": [
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "parent",
+			"item": [
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "parent1@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "000",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{parent}}login",
+									"host": [
+										"{{baseURL}}{{parent}}login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "changePassword",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "661b9853c375608a5ba285fa",
+											"type": "text"
+										},
+										{
+											"key": "currentPassword",
+											"value": "123",
+											"type": "text"
+										},
+										{
+											"key": "newPassword",
+											"value": "000",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{parent}}changePassword",
+									"host": [
+										"{{baseURL}}{{parent}}changePassword"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Parent",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "parent@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"type": "text"
+										},
+										{
+											"key": "contact",
+											"value": "1234567890",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{parent}}register",
+									"host": [
+										"{{baseURL}}{{parent}}register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "661b9853c375608a5ba285fa",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Parent1",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "parent1@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "contact",
+											"value": "098765432194",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{parent}}{{parent}}update",
+									"host": [
+										"{{baseURL}}{{parent}}{{parent}}update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "661b9853c375608a5ba285fa",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{parent}}{{parent}}single",
+									"host": [
+										"{{baseURL}}{{parent}}{{parent}}single"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "school",
+					"item": [
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{baseURL}}{{parent}}{{school}}all",
+									"host": [
+										"{{baseURL}}{{parent}}{{school}}all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "6613f12a867bcf27a343bf55",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{parent}}{{school}}single",
+									"host": [
+										"{{baseURL}}{{parent}}{{school}}single"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "class",
+					"item": [
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{baseURL}}{{parent}}class/all",
+									"host": [
+										"{{baseURL}}{{parent}}class"
+									],
+									"path": [
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "6613f368867bcf27a343bf85",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{parent}}class/single",
+									"host": [
+										"{{baseURL}}{{parent}}class"
+									],
+									"path": [
+										"single"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "post",
+					"item": [
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{baseURL}}{{parent}}post/all",
+									"host": [
+										"{{baseURL}}{{parent}}post"
+									],
+									"path": [
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "661b97a5c375608a5ba285f0",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{parent}}post/single",
+									"host": [
+										"{{baseURL}}{{parent}}post"
+									],
+									"path": [
+										"single"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "feeStructure",
+					"item": [
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "schoolId",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{parent}}feeStructure/all",
+									"host": [
+										"{{baseURL}}{{parent}}feeStructure"
+									],
+									"path": [
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "661b9fccc375608a5ba28627",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{parent}}feeStructure/single",
+									"host": [
+										"{{baseURL}}{{parent}}feeStructure"
+									],
+									"path": [
+										"single"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "booking",
+					"item": [
+						{
+							"name": "add",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "schoolId",
+											"value": "661b894cc34c1d37534f3daf",
+											"type": "text"
+										},
+										{
+											"key": "userId",
+											"value": "661b9853c375608a5ba285fa",
+											"type": "text"
+										},
+										{
+											"key": "purpose",
+											"value": "visit",
+											"type": "text"
+										},
+										{
+											"key": "bookingDate",
+											"value": "2024-04-10",
+											"type": "text"
+										},
+										{
+											"key": "bookingTime",
+											"value": "08:00 AM",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{parent}}booking/add",
+									"host": [
+										"{{baseURL}}{{parent}}booking"
+									],
+									"path": [
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "all",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "userId",
+											"value": "661b9853c375608a5ba285fa",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{parent}}booking/all",
+									"host": [
+										"{{baseURL}}{{parent}}booking"
+									],
+									"path": [
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "single",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "661ba29e8533c39fe6ef21ef",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{parent}}booking/single",
+									"host": [
+										"{{baseURL}}{{parent}}booking"
+									],
+									"path": [
+										"single"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "661ba29e8533c39fe6ef21ef",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "Cancelled",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{parent}}booking/update",
+									"host": [
+										"{{baseURL}}{{parent}}booking"
+									],
+									"path": [
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "enquiry",
+					"item": [
+						{
+							"name": "add",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Pooja",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "pooja@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "contact",
+											"value": "1234567890",
+											"type": "text"
+										},
+										{
+											"key": "message",
+											"value": "enquiry 1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}{{parent}}enquiry/add",
+									"host": [
+										"{{baseURL}}{{parent}}enquiry"
+									],
+									"path": [
+										"add"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
